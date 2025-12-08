@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact |Rare Devs</title>
+    <link rel="icon" href="/global/site_logo.png" type="image/png" />
+    <meta name="author" content="Davecodes" />
+
+    <link rel="stylesheet" href="/globals.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/interactive-grid.css" />
+    <link rel="stylesheet" href="/css/transition.css" />
+    <link rel="stylesheet" href="/css/preloader.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+  </head>
+  <body>
+    <div class="preloader-overlay">
+      <div class="preloader-grid"></div>
+
+      <div class="preloader-animation-wrapper">
+        <p class="preloader-text">Stabilizing Feed</p>
+        <div class="preloader-ring-frame"></div>
+        <div class="preloader-disc-frame"></div>
+      </div>
+    </div>
+
+    <svg
+      style="visibility: hidden; position: absolute"
+      width="0"
+      height="0"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+    >
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+            result="goo"
+          />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="interactive-grid"></div>
+
+    <div class="transition-grid"></div>
+
+    <nav>
+      <div class="nav-container">
+        <div class="nav-bg"></div>
+      </div>
+
+      <div class="nav-mobile-header">
+        <p class="nav-logo">Rare Devs</p>
+        <p class="nav-menu-toggle">Menu</p>
+      </div>
+
+      <div class="nav-overlay">
+        <div class="nav-items">
+          <div class="nav-item"><a href="/">Index</a></div>
+          <div class="nav-item"><a href="/about">About</a></div>
+          <div class="nav-item"><a href="/services">Services</a></div>
+          <div class="nav-item"><a href="/projects">Projects</a></div>
+          <div class="nav-item"><a href="/contact">Contact</a></div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero contact-hero">
+      <div class="hero-container">
+        <div class="hero-img-container"></div>
+
+        <div class="hero-content">
+          <div class="container">
+            <div class="hero-content-footer">
+              <div class="hero-content-header">
+                <h1 data-animate-variant="slide" data-animate-delay="0.6">
+                  Send a Signal
+                </h1>
+              </div>
+
+              <div class="hero-callout">
+                <p data-animate-variant="flicker" data-animate-delay="0.75">
+                  Link Established / 07.221
+                </p>
+                <p data-animate-variant="flicker" data-animate-delay="0.9">
+                  Awaiting Transmission
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form">
+      <div class="container">
+        <div class="contact-form-bg-wrapper">
+          <div class="contact-form-bg"></div>
+        </div>
+
+        <div class="contact-form-row">
+          <p data-animate-variant="flicker" data-animate-delay="0.75">
+            Communication Form
+          </p>
+          <p data-animate-variant="flicker" data-animate-delay="0.75">
+            Let’s create what the world needs next.
+          </p>
+        </div>
+
+        <div class="contact-form-row">
+          <div class="contact-form-col">
+            <div class="contact-form-header">
+              <h3 data-animate-variant="slide" data-animate-delay="0.75">
+                ENGAGE WITH RARE DEVS
+              </h3>
+
+              <p
+                class="bodyCopy"
+                data-animate-variant="slide"
+                data-animate-delay="0.7"
+              >
+                Reach out to our engineering station with any inquiry, collaboration request, or product idea.
+                Our team responds to all transmissions as soon as a secure connection is confirmed by command.
+              </p>
+            </div>
+
+            <div class="contact-form-availability">
+              <p data-animate-variant="flicker" data-animate-on-scroll="true">
+                Channel Online Awaiting Input ...
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-form-col">
+            <div class="form-item">
+              <input type="text" placeholder="Who are you?" />
+            </div>
+
+            <div class="form-item">
+              <input type="email" placeholder="Enter your email" />
+            </div>
+
+            <div class="form-item">
+              <textarea rows="6" placeholder="What are we building together?"></textarea>
+            </div>
+
+            <div class="form-item">
+              <div class="btn">
+                <a href="/contact" class="btn">
+                  <span class="btn-line"></span>Let's Start Building
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-container">
+      <div class="container">
+        <div class="faq-header">
+          <h3 data-animate-variant="slide" data-animate-on-scroll="true">
+            Here are some quick answers to the most common
+            things clients ask before we begin building together.
+          </h3>
+        </div>
+
+        <div class="faq-wrapper">
+          <div class="faq-items">
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>How do I start a project with Rare Devs?</h3>
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+
+              <div class="faq-answer">
+                <p class="bodyCopy">
+                  Simply reach out through our contact form or email.
+                   We’ll schedule a quick discovery call to learn about your vision, goals, and timeline — then propose the best way to make it happen.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>What industries do you work with?</h3>
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+
+              <div class="faq-answer">
+                <p class="bodyCopy">
+                 We collaborate with startups, brands,
+                  and organizations across different sectors — from eCommerce and logistics to healthcare, education, agencies, and more. If there’s a problem worth solving, we’re in.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>What services does Rare Devs offer?</h3>
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+
+              <div class="faq-answer">
+                <p class="bodyCopy">
+                  We design and develop intuitive digital products 
+                  including websites, mobile apps, software systems, and custom digital solutions built around your business goals.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>How long does a project typically take?</h3>
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+
+              <div class="faq-answer">
+                <p class="bodyCopy">
+                  Timelines vary depending on scope and complexity — small projects may take a few weeks, 
+                  while larger platforms can span a few months. We’ll provide a clear roadmap before development begins.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Do you provide ongoing support after launch?</h3>
+                <span class="faq-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+
+              <div class="faq-answer">
+                <p class="bodyCopy">
+                  Absolutely. We offer maintenance, feature improvements,
+                   and long-term support to keep your product secure, scalable, and evolving with your users.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-bg-container"></div>
+
+        <div class="footer-content">
+          <div class="footer-content-meta">
+            <div class="footer-content-col">
+              <h3>Send a signal if you want to connect</h3>
+
+              <div class="footer-form">
+                <input type="text" placeholder="Unit Address" />
+
+                <div class="btn">
+                  <a href="/contact" class="btn"
+                    ><span class="btn-line"></span>Transmit Message</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-content-col">
+              <p class="bodyCopy">
+               Rare Devs is a forward-thinking team dedicated to crafting user-friendly apps 
+               and software that solve real-world problems. 
+               We believe technology should feel natural, seamless, 
+               and intuitive, guiding users effortlessly through every interaction.
+              </p>
+            
+
+              <div class="footer-socials">
+                <div class="footer-social">
+                  <a href="https://www.instagram.com/rare_devs?igsh=c2g4a2l4bmRyYTFi&utm_source=qr">[ Instagram ]</a>
+                </div>
+                <div class="footer-social">
+                  <a href="https://x.com/rare_devs?t=xLtwEQn-KHRUhYh8nN16Bw&s=09">[ Twitter ]</a>
+                </div>
+                <div class="footer-social">
+                  <a href="/contact">[ LinkedIn ]</a>
+                </div>
+                <div class="footer-social">
+                  <a href="/contact">[ GitHub Repository ]</a>
+                </div>
+                <div class="footer-social">
+                  <a href="/contact">[ Dribbble ]</a>
+                </div>
+                <div class="footer-social">
+                  <a href="https://www.behance.net/oseiowusu? Owusu Badu - Brand Designer in Ghana :: Behance">[ Behance Archive ]</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-content-meta">
+            <div class="footer-content-col">
+              <p>[ Constructed by Davecodes ]</p>
+              <p>[ Nov 2025 ]</p>
+            </div>
+
+            <div class="footer-content-col">
+              <h1>Rare Devs&copy;</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        if (sessionStorage.getItem("pageTransition") === "true") {
+          let s = document.createElement("style");
+          s.setAttribute("data-transition", "");
+          s.textContent =
+            ".transition-grid{background-color:var(--base-400);pointer-events:auto;}";
+          (document.head || document.documentElement).appendChild(s);
+        }
+      })();
+    </script>
+
+    <script type="module" src="/js/lenis-scroll.js"></script>
+    <script type="module" src="/js/preloader.js"></script>
+    <script type="module" src="/js/nav.js"></script>
+    <script type="module" src="/js/interactive-grid.js"></script>
+    <script type="module" src="/js/transition.js"></script>
+    <script type="module" src="/js/home.js"></script>
+    <script type="module" src="/js/faq.js"></script>
+    <script type="module" src="/js/animated-copy.js"></script>
+  </body>
+</html>

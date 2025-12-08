@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rare Devs</title>
+    <link rel="icon" href="/global/site_logo.png" type="image/png" />
+    <meta name="author" content="Davecodes" />
+
+    <link rel="stylesheet" href="/globals.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/interactive-grid.css" />
+    <link rel="stylesheet" href="/css/transition.css" />
+    <link rel="stylesheet" href="/css/preloader.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+  </head>
+  <body>
+    <div class="preloader-overlay">
+      <div class="preloader-grid"></div>
+
+      <div class="preloader-animation-wrapper">
+        <p class="preloader-text">Stabilizing Feed</p>
+        <div class="preloader-ring-frame"></div>
+        <div class="preloader-disc-frame"></div>
+      </div>
+    </div>
+
+    <svg
+      style="visibility: hidden; position: absolute"
+      width="0"
+      height="0"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+    >
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+            result="goo"
+          />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="interactive-grid"></div>
+
+    <div class="transition-grid"></div>
+
+    <nav>
+      <div class="nav-container">
+        <div class="nav-bg"></div>
+      </div>
+
+      <div class="nav-mobile-header">
+        <p class="nav-logo">Rare Devs</p>
+        <p class="nav-menu-toggle">Menu</p>
+      </div>
+
+      <div class="nav-overlay">
+        <div class="nav-items">
+          <div class="nav-item"><a href="/">Index</a></div>
+          <div class="nav-item"><a href="/about">About</a></div>
+          <div class="nav-item"><a href="/services">Services</a></div>
+          <div class="nav-item"><a href="/projects">Projects</a></div>
+          <div class="nav-item"><a href="/contact">Contact</a></div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-img-container">
+          <div class="hero-img">
+            <img src="/index/rare.png" alt="Hero banner for Rare Devs" />
+          </div>
+
+          <div class="hero-img-overlay"></div>
+
+          <div class="hero-img-gradient"></div>
+        </div>
+
+        <div class="hero-content">
+          <div class="container">
+            <div class="hero-content-nav">
+              <div class="hero-timer">
+                <p>Zone 00 __ 00:00</p>
+              </div>
+            </div>
+
+            <div class="hero-content-header">
+              <h1 data-animate-variant="slide" data-animate-delay="0.6">
+                Hello<br />World
+              </h1>
+            </div>
+
+            <div class="hero-content-footer">
+              <div class="hero-footer-copy">
+                <p
+                  class="bodyCopy"
+                  data-animate-variant="slide"
+                  data-animate-delay="0.75"
+                >
+                  Rare Devs is a forward-thinking development studio focused on
+                  crafting innovative digital solutions.
+                  We specialize in web and mobile applications, delivering
+                  cutting-edge experiences that push the boundaries of technology
+                  and design guiding users effortlessly through every interaction.
+                </p>
+              </div>
+
+              <div class="hero-callout">
+                <p data-animate-variant="flicker" data-animate-delay="0.85">
+                  Traced Entry / 00.239
+                </p>
+                <p data-animate-variant="flicker" data-animate-delay="1">
+                  Feed Stabilized
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="container">
+        <div class="stats-container">
+          <div class="stat">
+            <div class="stat-copy">
+              <div class="stats-copy-label"><p>Star Rating</p></div>
+              <div class="stats-copy-count"><h3>4.8/5.0</h3></div>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-copy">
+              <div class="stats-copy-label"><p>Projects Completed</p></div>
+              <div class="stats-copy-count"><h3>64</h3></div>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-copy">
+              <div class="stats-copy-label"><p>Happy Clients</p></div>
+              <div class="stats-copy-count"><h3>23</h3></div>
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-copy">
+              <div class="stats-copy-label"><p>Years of XP</p></div>
+              <div class="stats-copy-count"><h3>09</h3></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="intro-header">
+          <h1 data-animate-variant="slide" data-animate-on-scroll="true">
+            Our Vibe 
+          </h1>
+        </div>
+
+        <div class="intro-copy">
+          <div class="intro-copy-wrapper">
+            <h3>
+              Modern, innovative and approachable development services for brands
+              and businesses seeking to elevate their digital presence. Our team
+              of experts combines creativity and technical expertise to deliver
+              tailored solutions that drive results.
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-missions-header">
+      <h1 data-animate-variant="slide" data-animate-on-scroll="true">
+        Highlighted <br />
+        Missions
+      </h1>
+    </section>
+
+    <section class="featured-missions">
+      <div class="featured-missions-list">
+        <a href="/expedition" class="featured-missions-item">
+          <p>01 / 05</p>
+          <h3>Serene Balance</h3>
+          <div class="featured-mission-item-img">
+            <img src="/index/highlight_img_01.png" alt="" />
+          </div>
+          <p>[ Website  ]</p>
+        </a>
+
+        <a href="https://www.behance.net/gallery/229312307/Hue-Of-Humanity-Logo-Design" class="featured-missions-item">
+          <p>02 / 05</p>
+          <h3>Hue Of Humanity</h3>
+          <div class="featured-mission-item-img">
+            <img src="/index/highlight_img_02.jpg" alt="" />
+          </div>
+          <p>[ Brand Design]</p>
+        </a>
+
+        <a href="/expedition" class="featured-missions-item">
+          <p>03 / 05</p>
+          <h3>Luminar Signal</h3>
+          <div class="featured-mission-item-img">
+            <img src="/index/highlight_img_03.jpg" alt="" />
+          </div>
+          <p>[ Signal Study ]</p>
+        </a>
+
+        <a href="/expedition" class="featured-missions-item">
+          <p>04 / 05</p>
+          <h3>Valley Structures</h3>
+          <div class="featured-mission-item-img">
+            <img src="/index/highlight_img_04.jpg" alt="" />
+          </div>
+          <p>[ Structure Log ]</p>
+        </a>
+
+        <a href="/expedition" class="featured-missions-item">
+          <p>05 / 05</p>
+          <h3>Emerald Horizon</h3>
+          <div class="featured-mission-item-img">
+            <img src="/index/highlight_img_05.jpg" alt="" />
+          </div>
+          <p>[ Horizon Scan ]</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-content">
+        <div class="cta-logo">
+          <img src="/index/logo.png" alt="" />
+        </div>
+
+        <div class="cta-copy">
+          <p class="bodyCopy lg">
+             Transmit your message to Rare Devs. Our team monitors 
+            all incoming requests and responds quickly once the channel is secure.
+          </p>
+        </div>
+
+        <div class="btn">
+          <a href="/contact" class="btn"
+            ><span class="btn-line"></span>Send Transmission</a
+          >
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <div class="cta-card cta-card-left">
+          <div class="cta-card-frame">
+            <div class="cta-card-img">
+              <img src="/index/cta_img_01.jpg" alt="" />
+            </div>
+            <div class="cta-card-gradient"></div>
+          </div>
+        </div>
+
+        <div class="cta-card cta-card-right">
+          <div class="cta-card-frame">
+            <div class="cta-card-img">
+              <img src="/index/cta_img_02.jpg" alt="" />
+            </div>
+            <div class="cta-card-gradient"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <div class="cta-card cta-card-left">
+          <div class="cta-card-frame">
+            <div class="cta-card-img">
+              <img src="/index/cta_img_03.jpg" alt="" />
+            </div>
+            <div class="cta-card-gradient"></div>
+          </div>
+        </div>
+
+        <div class="cta-card cta-card-right">
+          <div class="cta-card-frame">
+            <div class="cta-card-img">
+              <img src="/index/cta_img_04.jpg" alt="" />
+            </div>
+            <div class="cta-card-gradient"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <div class="cta-card cta-card-left">
+          <div class="cta-card-frame">
+            <div class="cta-card-img">
+              <img src="/index/cta_img_05.jpg" alt="" />
+            </div>
+            <div class="cta-card-gradient"></div>
+          </div>
+        </div>
+
+        <div class="cta-card cta-card-right">
+          <div class="cta-card-frame">
+            <div class="cta-card-img">
+              <img src="/index/cta_img_06.jpg" alt="" />
+            </div>
+            <div class="cta-card-gradient"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-bg-container"></div>
+
+        <div class="footer-content">
+          <div class="footer-content-meta">
+            <div class="footer-content-col">
+              <h3>Send a signal if you want to connect</h3>
+
+              <div class="footer-form">
+                <input type="text" placeholder="Unit Address" />
+
+                <div class="btn">
+                  <a href="/contact" class="btn"
+                    ><span class="btn-line"></span>Transmit Message</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-content-col">
+              <p class="bodyCopy">
+               Rare Devs is a forward-thinking team dedicated to crafting user-friendly apps 
+               and software that solve real-world problems. We believe technology should feel natural, seamless, 
+               and intuitive, guiding users effortlessly through every interaction.
+              </p>
+
+              <div class="footer-socials">
+                <div class="footer-social">
+                  <a rel="noopener" target="_blank" href="https://www.instagram.com/rare_devs?igsh=c2g4a2l4bmRyYTFi&utm_source=qr">[ Instagram ]</a>
+                </div>
+                <div class="footer-social">
+                  <a rel="noopener" target="_blank" href="https://x.com/rare_devs?t=xLtwEQn-KHRUhYh8nN16Bw&s=09">[ Twitter ]</a>
+                </div>
+                <div class="footer-social">
+                  <a href="/contact">[ LinkedIn ]</a>
+                </div>
+                <div class="footer-social">
+                  <a href="/contact">[ GitHub Repository ]</a>
+                </div>
+                <div class="footer-social">
+                  <a href="/contact">[ Dribbble ]</a>
+                </div>
+                <div class="footer-social">
+                  <a href="https://www.behance.net/oseiowusu? Owusu Badu - Brand Designer in Ghana :: Behance">[ Behance Archive ]</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-content-meta">
+            <div class="footer-content-col">
+              <p>[ Constructed by Davecodes]</p>
+              <p>[ Nov 2025 ]</p>
+            </div>
+
+            <div class="footer-content-col">
+              <h1>Rare Devs&copy;</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        if (sessionStorage.getItem("pageTransition") === "true") {
+          let s = document.createElement("style");
+          s.setAttribute("data-transition", "");
+          s.textContent =
+            ".transition-grid{background-color:var(--base-400);pointer-events:auto;}";
+          (document.head || document.documentElement).appendChild(s);
+        }
+      })();
+    </script>
+
+    <script type="module" src="/js/lenis-scroll.js"></script>
+    <script type="module" src="/js/preloader.js"></script>
+    <script type="module" src="/js/nav.js"></script>
+    <script type="module" src="/js/interactive-grid.js"></script>
+    <script type="module" src="/js/transition.js"></script>
+    <script type="module" src="/js/home.js"></script>
+    <script type="module" src="/js/cta.js"></script>
+    <script type="module" src="/js/animated-copy.js"></script>
+  </body>
+</html>
