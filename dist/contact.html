@@ -3,15 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact |Rare Devs</title>
-    <link rel="icon" href="/global/site_logo.svg" type="image/svg+xml" />
+    <title>Contact Us | Rare Devs</title>
+    <meta name="description" content="Reach out to Rare Devs. Contact our engineering station for custom web and mobile development, product design consulting, and collaboration inquiries." />
+    <meta name="keywords" content="contact rare devs, software developer contact, design agency contact, custom software services, collaborate with developers" />
     <meta name="author" content="Davecodes" />
+    <link rel="canonical" href="https://raredevs.tech/contact" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://raredevs.tech/contact" />
+    <meta property="og:title" content="Contact Us | Rare Devs" />
+    <meta property="og:description" content="Reach out to Rare Devs. Contact our engineering station for custom web and mobile development, product design consulting, and collaboration inquiries." />
+    <meta property="og:image" content="https://raredevs.tech/global/site_logo.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://raredevs.tech/contact" />
+    <meta name="twitter:title" content="Contact Us | Rare Devs" />
+    <meta name="twitter:description" content="Reach out to Rare Devs. Contact our engineering station for custom web and mobile development, product design consulting, and collaboration inquiries." />
+    <meta name="twitter:image" content="https://raredevs.tech/global/site_logo.png" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Rare Devs",
+        "url": "https://raredevs.tech/",
+        "logo": "https://raredevs.tech/global/site_logo.png",
+        "sameAs": [
+          "https://www.instagram.com/rare_devs",
+          "https://x.com/rare_devs",
+          "https://www.linkedin.com/company/rare-devs/"
+        ]
+      }
+    }
+    </script>
+
+    <link rel="icon" href="/global/site_logo.png" type="image/png" />
 
-    <script type="module" crossorigin src="/assets/contact-BosOTlBm.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/transition-CoDNvgAz.js">
-    <link rel="modulepreload" crossorigin href="/assets/animated-copy-BUueYYtI.js">
+    <script type="module" crossorigin src="/assets/contact-DEC1eo9J.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/transition-w5yTQpzG.js">
+    <link rel="modulepreload" crossorigin href="/assets/contact-form-BkvQRDyi.js">
     <link rel="stylesheet" crossorigin href="/assets/transition-2CxR2g8y.css">
-    <link rel="stylesheet" crossorigin href="/assets/animated-copy-DMGHlY0m.css">
+    <link rel="stylesheet" crossorigin href="/assets/contact-form-DWOv4R1T.css">
     <link rel="stylesheet" crossorigin href="/assets/contact-B0Fw1t_j.css">
   </head>
   <body>
@@ -137,27 +174,29 @@
             </div>
           </div>
 
-          <div class="contact-form-col">
+          <form id="contact-form-element" class="contact-form-col">
             <div class="form-item">
-              <input type="text" placeholder="Who are you?" />
+              <input type="text" id="contact-name" placeholder="Who are you?" required />
             </div>
 
             <div class="form-item">
-              <input type="email" placeholder="Enter your email" />
+              <input type="email" id="contact-email" placeholder="Enter your email" required />
             </div>
 
             <div class="form-item">
-              <textarea rows="6" placeholder="What are we building together?"></textarea>
+              <textarea id="contact-message" rows="6" placeholder="What are we building together?" required></textarea>
             </div>
 
             <div class="form-item">
               <div class="btn">
-                <a href="/contact" class="btn">
+                <a href="#" class="btn" role="button" aria-label="Submit Contact Form">
                   <span class="btn-line"></span>Let's Start Building
                 </a>
               </div>
             </div>
-          </div>
+            
+            <div class="form-status" style="display: none; margin-top: 1rem; font-family: 'Geist Mono', monospace; font-size: 0.85rem; padding: 1.2rem; border-radius: 0.5rem; text-align: center; text-transform: uppercase;"></div>
+          </form>
         </div>
       </div>
     </section>
@@ -311,15 +350,17 @@
             <div class="footer-content-col">
               <h3>Send a signal if you want to connect</h3>
 
-              <div class="footer-form">
-                <input type="text" placeholder="Unit Address" />
+              <form class="footer-form">
+                <input type="email" placeholder="Unit Address" required class="footer-email-input" />
 
                 <div class="btn">
-                  <a href="/contact" class="btn"
-                    ><span class="btn-line"></span>Transmit Message</a
-                  >
+                  <a href="#" class="btn" role="button" aria-label="Transmit Message">
+                    <span class="btn-line"></span>Transmit Message
+                  </a>
                 </div>
-              </div>
+                
+                <div class="form-status" style="display: none; margin-top: 1rem; font-family: 'Geist Mono', monospace; font-size: 0.85rem; padding: 0.8rem; border-radius: 0.5rem; text-align: center; text-transform: uppercase;"></div>
+              </form>
             </div>
 
             <div class="footer-content-col">
@@ -339,7 +380,7 @@
                   <a href="https://x.com/rare_devs?t=xLtwEQn-KHRUhYh8nN16Bw&s=09">[ Twitter ]</a>
                 </div>
                 <div class="footer-social">
-                  <a href="/contact">[ LinkedIn ]</a>
+                  <a rel="noopener" target="_blank" href="https://www.linkedin.com/company/rare-devs/">[ LinkedIn ]</a>
                 </div>
                 <div class="footer-social">
                   <a href="/contact">[ GitHub Repository ]</a>
@@ -379,6 +420,6 @@
         }
       })();
     </script>
-
+
   </body>
 </html>

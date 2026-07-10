@@ -3,16 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Expedition | Orbit Matter</title>
-    <link rel="icon" href="/global/site_logo.svg" type="image/svg+xml" />
-    <meta name="author" content="Codegrid" />
+    <title>Services | Rare Devs</title>
+    <meta name="description" content="Discover the digital engineering capabilities of Rare Devs. We build interactive web experiences, high-performance mobile apps, and custom software systems designed to solve business problems." />
+    <meta name="keywords" content="web development services, mobile app development, UI UX design services, custom software engineering, software development studio" />
+    <meta name="author" content="Davecodes" />
+    <link rel="canonical" href="https://raredevs.tech/services" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://raredevs.tech/services" />
+    <meta property="og:title" content="Services | Rare Devs" />
+    <meta property="og:description" content="Discover the digital engineering capabilities of Rare Devs. We build interactive web experiences, high-performance mobile apps, and custom software systems." />
+    <meta property="og:image" content="https://raredevs.tech/global/site_logo.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://raredevs.tech/services" />
+    <meta name="twitter:title" content="Services | Rare Devs" />
+    <meta name="twitter:description" content="Discover the digital engineering capabilities of Rare Devs. We build interactive web experiences, high-performance mobile apps, and custom software systems." />
+    <meta name="twitter:image" content="https://raredevs.tech/global/site_logo.png" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ServicePage",
+      "mainEntity": {
+        "@type": "Service",
+        "serviceType": "Web and Mobile Software Engineering",
+        "provider": {
+          "@type": "Organization",
+          "name": "Rare Devs",
+          "url": "https://raredevs.tech/",
+          "sameAs": [
+            "https://www.instagram.com/rare_devs",
+            "https://x.com/rare_devs",
+            "https://www.linkedin.com/company/rare-devs/"
+          ]
+        }
+      }
+    }
+    </script>
+
+    <link rel="icon" href="/global/site_logo.png" type="image/png" />
 
-    <script type="module" crossorigin src="/assets/services-D2ODI5R8.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/transition-CoDNvgAz.js">
-    <link rel="modulepreload" crossorigin href="/assets/animated-copy-BUueYYtI.js">
-    <link rel="modulepreload" crossorigin href="/assets/image-CA9XfRkK.js">
+    <script type="module" crossorigin src="/assets/services-C1QgNNbK.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/transition-w5yTQpzG.js">
+    <link rel="modulepreload" crossorigin href="/assets/contact-form-BkvQRDyi.js">
     <link rel="stylesheet" crossorigin href="/assets/transition-2CxR2g8y.css">
-    <link rel="stylesheet" crossorigin href="/assets/animated-copy-DMGHlY0m.css">
+    <link rel="stylesheet" crossorigin href="/assets/contact-form-DWOv4R1T.css">
     <link rel="stylesheet" crossorigin href="/assets/services-DpnhO8rX.css">
   </head>
   <body>
@@ -76,15 +115,11 @@
       <div class="hero-container">
         <div class="hero-img-container">
           <div class="hero-img">
-            <image
-              src="/expedition/lance.webp"
-              alt=""
-              width="1200"
-              height="900"
-              loading="eager"
-              decoding="async"
-              style="width: 100%; height: auto; object-fit: cover;"
-            />
+
+            
+       
+            <img src="/expedition/lance.png" alt="" />
+
           </div>
 
           <div class="hero-img-overlay"></div>
@@ -152,15 +187,17 @@
             <div class="footer-content-col">
               <h3>Send a signal if you want to connect</h3>
 
-              <div class="footer-form">
-                <input type="text" placeholder="Unit Address" />
+              <form class="footer-form">
+                <input type="email" placeholder="Unit Address" required class="footer-email-input" />
 
                 <div class="btn">
-                  <a href="/contact" class="btn"
-                    ><span class="btn-line"></span>Transmit Message</a
-                  >
+                  <a href="#" class="btn" role="button" aria-label="Transmit Message">
+                    <span class="btn-line"></span>Transmit Message
+                  </a>
                 </div>
-              </div>
+                
+                <div class="form-status" style="display: none; margin-top: 1rem; font-family: 'Geist Mono', monospace; font-size: 0.85rem; padding: 0.8rem; border-radius: 0.5rem; text-align: center; text-transform: uppercase;"></div>
+              </form>
             </div>
 
             <div class="footer-content-col">
@@ -178,7 +215,7 @@
                   <a href="https://x.com/rare_devs?t=xLtwEQn-KHRUhYh8nN16Bw&s=09">[ Twitter ]</a>
                 </div>
                 <div class="footer-social">
-                  <a href="/contact">[ LinkedIn ]</a>
+                  <a rel="noopener" target="_blank" href="https://www.linkedin.com/company/rare-devs/">[ LinkedIn ]</a>
                 </div>
                 <div class="footer-social">
                   <a href="/contact">[ GitHub Repository ]</a>

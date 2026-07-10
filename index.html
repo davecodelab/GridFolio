@@ -3,9 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rare Devs</title>
-    <link rel="icon" href="/global/site_logo.png" type="image/png" />
+    <title>Rare Devs | Premium Web & Mobile App Development Studio</title>
+    <meta name="description" content="Rare Devs is a forward-thinking development studio crafting innovative, high-performance web and mobile applications. Discover our premium design systems and bespoke digital solutions." />
+    <meta name="keywords" content="web development, mobile app development, UI/UX design, custom software, tech studio, Rare Devs" />
     <meta name="author" content="Davecodes" />
+    <link rel="canonical" href="https://raredevs.tech/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://raredevs.tech/" />
+    <meta property="og:title" content="Rare Devs | Premium Web & Mobile App Development Studio" />
+    <meta property="og:description" content="Rare Devs is a forward-thinking development studio crafting innovative, high-performance web and mobile applications." />
+    <meta property="og:image" content="https://raredevs.tech/global/site_logo.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://raredevs.tech/" />
+    <meta name="twitter:title" content="Rare Devs | Premium Web & Mobile App Development Studio" />
+    <meta name="twitter:description" content="Rare Devs is a forward-thinking development studio crafting innovative, high-performance web and mobile applications." />
+    <meta name="twitter:image" content="https://raredevs.tech/global/site_logo.png" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Rare Devs",
+      "image": "https://raredevs.tech/global/site_logo.png",
+      "@id": "https://raredevs.tech/#organization",
+      "url": "https://raredevs.tech/",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Accra",
+        "addressCountry": "GH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 5.6037,
+        "longitude": -0.1870
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/rare_devs",
+        "https://x.com/rare_devs",
+        "https://www.linkedin.com/company/rare-devs/"
+      ]
+    }
+    </script>
+
+    <link rel="icon" href="/global/site_logo.png" type="image/png" />
 
     <link rel="stylesheet" href="/globals.css" />
     <link rel="stylesheet" href="/css/nav.css" />
@@ -361,15 +419,17 @@
             <div class="footer-content-col">
               <h3>Send a signal if you want to connect</h3>
 
-              <div class="footer-form">
-                <input type="text" placeholder="Unit Address" />
+              <form class="footer-form">
+                <input type="email" placeholder="Unit Address" required class="footer-email-input" />
 
                 <div class="btn">
-                  <a href="/contact" class="btn"
-                    ><span class="btn-line"></span>Transmit Message</a
-                  >
+                  <a href="#" class="btn" role="button" aria-label="Transmit Message">
+                    <span class="btn-line"></span>Transmit Message
+                  </a>
                 </div>
-              </div>
+                
+                <div class="form-status" style="display: none; margin-top: 1rem; font-family: 'Geist Mono', monospace; font-size: 0.85rem; padding: 0.8rem; border-radius: 0.5rem; text-align: center; text-transform: uppercase;"></div>
+              </form>
             </div>
 
             <div class="footer-content-col">
@@ -387,7 +447,7 @@
                   <a rel="noopener" target="_blank" href="https://x.com/rare_devs?t=xLtwEQn-KHRUhYh8nN16Bw&s=09">[ Twitter ]</a>
                 </div>
                 <div class="footer-social">
-                  <a href="/contact">[ LinkedIn ]</a>
+                  <a rel="noopener" target="_blank" href="https://www.linkedin.com/company/rare-devs/">[ LinkedIn ]</a>
                 </div>
                 <div class="footer-social">
                   <a href="/contact">[ Dribbble ]</a>
@@ -433,5 +493,6 @@
     <script type="module" src="/js/home.js"></script>
     <script type="module" src="/js/cta.js"></script>
     <script type="module" src="/js/animated-copy.js"></script>
+    <script type="module" src="/js/contact-form.js"></script>
   </body>
 </html>
