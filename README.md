@@ -53,15 +53,33 @@ Our developers and designers deploy a robust set of tools to bring products to l
 
 ---
 
-## 🚀 Repository & GridFolio Architecture
+## 🚀 Architecture & Development Matrix
 
-This repository holds the codebase for **GridFolio**, our flagship cyberpunk-themed agency showcase.
+This repository houses **GridFolio**, the digital showcase of Rare Devs. It is organized for fast static loading and clean serverless routing:
 
-### 📡 Serverless Mail Pipeline
-We replaced static layout forms with an active serverless messaging pipeline:
-* **Controller:** [`js/contact-form.js`](file:///c:/Users/user/Desktop/GridFolio/js/contact-form.js) intercepts submissions, validates input vectors, and handles submit state locks.
-* **Serverless Route:** [`api/send-email.js`](file:///c:/Users/user/Desktop/GridFolio/api/send-email.js) handles authorization and forwards messages to the studio inbox via the **Resend API**.
-* **Visual Validation:** Uses GSAP spring-shake physics to display alerts for invalid inputs and slides open dynamic feedback alerts on successful delivery.
+### 📁 Directory Anatomy
+```text
+GridFolio/
+├── 📂 api/                   # Serverless execution layer
+│   └── 📄 send-email.js      # Resend API mail routing gateway
+├── 📂 js/                    # Client interface dynamics
+│   ├── 📄 contact-form.js    # Contact validation & GSAP animations
+│   └── 📄 observatory.js     # Tech carousel scroll animation
+├── 📂 css/                   # Responsive typography & layouts
+│   └── 📄 observatory.css    # Dynamic carousel style sheets
+├── 📂 public/                # Static public assets
+│   ├── 📄 sitemap.xml        # SEO crawler mapping
+│   └── 📄 robots.txt         # Search crawler policies
+└── 📄 vite.config.js         # Multi-page Vite compilation config
+```
+
+### 📡 Pipeline Matrix
+
+#### 1. Serverless Mail Gateway
+We replaced static form layouts with a secure serverless mailing channel:
+* **The Logic (`js/contact-form.js`)**: Validates DOM elements, blocks duplicate clicks, and manages form submission locks.
+* **The Bridge (`api/send-email.js`)**: Processes authorization tokens and securely fires payload envelopes to the **Resend API**.
+* **Visual States**: Built with GSAP spring engines. Failure events trigger a horizontal input shake and a warning orange glow; success events slide open a confirmation modal.
 
 ```mermaid
 sequenceDiagram
@@ -86,34 +104,34 @@ sequenceDiagram
     end
 ```
 
-### 🎠 Infinite Scroll Tech Carousel
-On the About page, we designed a dynamic scroll-linked slider showcasing our 30-item capability matrix:
-* **Fluid Layout:** Uses dynamic flex-basis sizing (`380px` on desktop, `80vw` on mobile) inside a `width: max-content` wrapper.
-* **Scroll-Bound Translation:** GSAP ScrollTrigger automatically calculates bounds (`-(wrapperWidth - containerWidth)`) to execute smooth horizontal translations as the user scrolls vertically.
+#### 2. Scroll-Linked Tech Slider
+A fluid, touch-friendly horizontal track on the About page displaying 30 technology stacks:
+* **Structural CSS**: Sets container `width: max-content` with cards fixed to a baseline flex-width (`380px` on desktop / `80vw` on mobile).
+* **Tween Calculations**: GSAP computes bounds on runtime (`-(wrapperWidth - containerWidth)`) to execute smooth translation matrices during vertical scrolling.
 
-### 📈 100% SEO Crawler Matrix
-* **Meta Structuring:** Structured headers containing unique meta descriptions, Canonical URLs, and Open Graph cards across all static pages.
-* **JSON-LD Schema:** Embedded Rich-Schema data detailing Rare Devs' organization contacts, location vectors, service offerings, and social networks for maximum search index authority.
-* **Index maps:** Automatically generated sitemap maps ([`public/sitemap.xml`](file:///c:/Users/user/Desktop/GridFolio/public/sitemap.xml)) and search permission lists ([`public/robots.txt`](file:///c:/Users/user/Desktop/GridFolio/public/robots.txt)).
+#### 3. SEO Integrity Layer
+* **Unique Metadata**: Page-specific titles, meta descriptions, and canonical headers targeting `raredevs.tech`.
+* **Social Previews**: Open Graph and Twitter Card tags deployed for links.
+* **JSON-LD Schema**: Schema structures detailing company contacts, service portfolios, and verified social handles.
 
 ---
 
-## 💻 Local Setup & Development
+## 💻 Terminal Commands
 
-### 1. Clone & Install Dependencies
-Ensure you have [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/) installed:
+### 📦 Setup & Installation
+Install the project dependencies locally using `pnpm`:
 ```bash
 pnpm install
 ```
 
-### 2. Boot Local Environment
-Starts the Vite dev server with fast hot-reload:
+### ⚡ Development Environment
+Boot the Vite server with live hot-reloading:
 ```bash
 pnpm dev
 ```
 
-### 3. Build & Minify for Production
-Compiles and bundles index scripts, assets, and styling sheets:
+### 🚀 Production Compilation
+Compile and optimize index files, static assets, and stylesheets for deployment:
 ```bash
 pnpm build
 ```
