@@ -1,6 +1,6 @@
 # ⚡ RARE DEVS // GRIDFOLIO
 
-> A high-performance, cyberpunk-inspired professional engineering studio portfolio. Engineered with advanced serverless architectures, custom vector graphics, state-of-the-art scroll interfaces, and a 100% graded SEO matrix.
+> Every product has a story. We help build it.
 
 ---
 
