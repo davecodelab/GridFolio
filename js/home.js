@@ -95,7 +95,7 @@ function initStickyWorkHeaderAnimation() {
 
     mm.add("(max-width: 999px)", () => {
       document
-        .querySelectorAll(".card, .card-container, .sticky-header h1")
+        .querySelectorAll(".process .card, .card-container, .sticky-header h1")
         .forEach((el) => (el.style = ""));
       return {};
     });
@@ -200,7 +200,7 @@ function initStickyWorkHeaderAnimation() {
           }
 
           if (progress >= 0.7 && !isFlipAnimationCompleted) {
-            gsap.to(".card", {
+            gsap.to(".process .card", {
               rotationY: 180,
               duration: 0.75,
               ease: "power3.inOut",
@@ -216,7 +216,7 @@ function initStickyWorkHeaderAnimation() {
 
             isFlipAnimationCompleted = true;
           } else if (progress < 0.7 && isFlipAnimationCompleted) {
-            gsap.to(".card", {
+            gsap.to(".process .card", {
               rotationY: 0,
               duration: 0.75,
               ease: "power3.inOut",

@@ -205,6 +205,20 @@
   .routine-slider
   .routine-slider-wrapper
   .routine-block
+  .routine-block-footer
+  h3 {
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  line-height: 0.9;
+  margin-bottom: 0.15rem;
+}
+
+.routine
+  .routine-container
+  .routine-copy
+  .container
+  .routine-slider
+  .routine-slider-wrapper
+  .routine-block
   .routine-block-header
   p:nth-child(2) {
   color: var(--base-200);
@@ -219,7 +233,7 @@
   .routine-block
   .routine-icon {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30%;
@@ -235,10 +249,20 @@
   .routine-slider-wrapper
   .routine-block
   .routine-icon
+  svg,
+.routine
+  .routine-container
+  .routine-copy
+  .container
+  .routine-slider
+  .routine-slider-wrapper
+  .routine-block
+  .routine-icon
   img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
 }
 
 /* observatory - about section */
@@ -288,12 +312,15 @@
 
 .team .team-counter {
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   width: 100%;
   gap: 1.5rem;
   justify-content: space-between;
   margin-top: 0;
   padding: 1.5rem;
+  z-index: 10;
 }
 
 .team .team-counter .counter-title h1 {
@@ -327,12 +354,13 @@
 
 .team .cards {
   position: absolute;
-  top: 25%;
+  top: 32%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 150vw;
   height: 600px;
   will-change: transform;
+  z-index: 1;
 }
 
 .team .cards .card {
@@ -342,7 +370,7 @@
   left: 50%;
   top: 50%;
   transform-origin: center center;
-  margin-left: -250px;
+  margin-left: -212.5px;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -463,10 +491,12 @@
   .team .team-counter {
     margin: 6rem 1rem 1rem 1rem;
     padding: 0;
+    top: 0;
+    left: 0;
   }
 
   .team .team-counter .counter-title {
-    height: 30px;
+    height: auto;
   }
 
   .team .team-counter .count {
@@ -474,12 +504,13 @@
   }
 
   .team .cards {
-    top: 27.5%;
+    top: 32%;
   }
 
   .team .cards .card {
     width: 375px;
     height: 500px;
+    margin-left: -187.5px;
   }
 
   .team .team-counter .counter-title h1 {
