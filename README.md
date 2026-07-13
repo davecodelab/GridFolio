@@ -154,15 +154,119 @@ CONTACT_RECEIVER_EMAIL=your_inbox@domain.com
 <summary><b>🤝 Contribution Pipeline</b></summary>
 <br />
 
-### Branches
-- Features: `feature/feature-name`
-- Bugfixes: `bugfix/issue-description`
+## Branch Strategy
 
-### Commits
-Follow Conventional Commits guidelines:
-- `feat: add card stage overlays`
-- `fix: scope home card-flip animation`
-- `style: format observatory buttons`
+All development work should be done on a separate branch and merged into the `main` branch through a Pull Request (PR).
+
+Direct pushes to `main` should be avoided to maintain code quality, stability, and proper review processes.
+
+### Branch Naming Convention
+
+Use the following naming patterns:
+
+- Features: `feature/feature-name`
+- Bug Fixes: `bugfix/issue-description`
+- Improvements: `improvement/description`
+- Documentation: `docs/update-description`
+- Refactoring: `refactor/component-name`
+
+Examples:
+
+```bash
+feature/update-crew-section
+bugfix/fix-navbar-mobile-view
+improvement/improve-about-page-ui
+docs/update-readme
+refactor/restructure-components
+```
+
+---
+
+## Pull Request (PR) Workflow
+
+All changes must go through the following process:
+
+1. Create a new branch from `main`.
+2. Make your changes and commit them.
+3. Push your branch to GitHub.
+4. Open a Pull Request (PR) into `main`.
+5. Request a review from team members.
+6. Address any feedback or requested changes.
+7. Merge the PR after approval.
+
+Pull Requests should include:
+
+* A clear title describing the change.
+* A short description of what was implemented.
+* Screenshots or recordings for UI changes where necessary.
+* Related issue references (e.g., `Fixes #12`).
+
+---
+
+## Commit Convention
+
+This project follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+
+All commit messages should follow this format:
+
+```
+<type>: <description>
+```
+
+### Commit Types
+
+| Type       | Description                                               |
+| ---------- | --------------------------------------------------------- |
+| `feat`     | Introduces a new feature                                  |
+| `fix`      | Fixes a bug or issue                                      |
+| `docs`     | Documentation changes                                     |
+| `style`    | Code formatting or UI styling changes                     |
+| `refactor` | Code restructuring without changing functionality         |
+| `test`     | Adding or updating tests                                  |
+| `chore`    | Maintenance tasks, dependencies, or configuration changes |
+
+### Commit Examples
+
+```bash
+feat: add crew member profile section
+
+fix: resolve crew names visibility issue on about page
+
+style: improve crew card responsive layout
+
+docs: update contribution guidelines
+
+refactor: simplify navbar component structure
+
+chore: update project dependencies
+```
+
+Commit messages should be:
+
+* Clear and descriptive.
+* Written in the imperative form.
+* Focused on one change at a time.
+
+Avoid unclear commit messages such as:
+
+```bash
+updated files
+fixed stuff
+changes
+final update
+```
+
+---
+
+## Code Review Guidelines
+
+Before merging a Pull Request:
+
+* Ensure the application builds successfully.
+* Verify that the changes work as expected.
+* Check that existing functionality is not broken.
+* Ensure code follows the project's structure and style guidelines.
+
 </details>
 
 ---
