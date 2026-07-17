@@ -114,10 +114,187 @@ function initProcessCardAnimation() {
     const mm = gsap.matchMedia();
 
     mm.add("(max-width: 999px)", () => {
-      processCards.forEach((el) => (el.style = ""));
-      cardContainer.style = "";
-      stickyHeader.style = "";
-      return {};
+      const path = cardContainer.querySelector(".process-line-path");
+      const lineContainer = cardContainer.querySelector(".process-line-container");
+      
+      // 1. Accessibility: check for prefers-reduced-motion
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (prefersReducedMotion) {
+        if (lineContainer) lineContainer.style.display = "none";
+        
+        processCards.forEach((card) => {
+          gsap.set(card, { opacity: 0 });
+          ScrollTrigger.create({
+            trigger: card,
+            start: "top 80%",
+            once: true,
+            onEnter: () => {
+              gsap.to(card, { opacity: 1, duration: 0.5, ease: "power1.out" });
+            }
+          });
+        });
+        
+        return () => {
+          processCards.forEach((el) => (el.style = ""));
+          cardContainer.style = "";
+          stickyHeader.style = "";
+        };
+      }
+
+      // Reset styles to start animation
+      gsap.set(processCards, { opacity: 0, y: 40 });
+
+      // 2. Dynamic Path Calculation
+      function updatePath() {
+        if (!path) return null;
+        const containerRect = cardContainer.getBoundingClientRect();
+        const rect1 = cardOne.getBoundingClientRect();
+        const rect2 = cardTwo.getBoundingClientRect();
+        const rect3 = cardThree.getBoundingClientRect();
+
+        // Calculate card centers relative to cardContainer
+        const x = rect1.left + rect1.width / 2 - containerRect.left;
+        const y1 = rect1.top + rect1.height / 2 - containerRect.top;
+        const y2 = rect2.top + rect2.height / 2 - containerRect.top;
+        const y3 = rect3.top + rect3.height / 2 - containerRect.top;
+
+        path.setAttribute("d", `M ${x} ${y1} L ${x} ${y2} L ${x} ${y3}`);
+
+        const length = path.getTotalLength();
+        gsap.set(path, {
+          strokeDasharray: length,
+          strokeDashoffset: length
+        });
+
+        return { length, y1, y2, y3 };
+      }
+
+      // Initial path setup
+      let pathData = updatePath();
+
+      // Update path on resize
+      let resizeTimeout;
+      const resizeHandler = () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          pathData = updatePath();
+          ScrollTrigger.refresh();
+        }, 150);
+      };
+      window.addEventListener("resize", resizeHandler);
+
+      // 3. Scroll Triggered Timelines for Card Entrances & Thread Animation
+      // Card 1 Entrance
+      ScrollTrigger.create({
+        trigger: cardOne,
+        start: "top 75%",
+        once: true,
+        onEnter: () => {
+          gsap.to(cardOne, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "back.out(1.5)"
+          });
+        }
+      });
+
+      // Card 2 & Line Segment 1
+      ScrollTrigger.create({
+        trigger: cardTwo,
+        start: "top 75%",
+        once: true,
+        onEnter: () => {
+          if (!path || !pathData) {
+            gsap.to(cardTwo, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.5)" });
+            return;
+          }
+          const { length, y1, y2 } = pathData;
+          const segment1Length = y2 - y1;
+          const targetOffset = length - segment1Length;
+
+          const tl = gsap.timeline();
+          tl.to(path, {
+            strokeDashoffset: targetOffset,
+            duration: 0.8,
+            ease: "power2.out"
+          });
+          tl.to(cardTwo, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "back.out(1.5)"
+          }, "-=0.3");
+        }
+      });
+
+      // Card 3 & Line Segment 2
+      ScrollTrigger.create({
+        trigger: cardThree,
+        start: "top 75%",
+        once: true,
+        onEnter: () => {
+          if (!path || !pathData) {
+            gsap.to(cardThree, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.5)" });
+            return;
+          }
+          const tl = gsap.timeline();
+          tl.to(path, {
+            strokeDashoffset: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          });
+          tl.to(cardThree, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "back.out(1.5)"
+          }, "-=0.3");
+        }
+      });
+
+      // 4. Tap Interactions (Tactile Scale & Rotate)
+      const tapHandlers = [];
+      processCards.forEach((card) => {
+        const handleDown = () => {
+          gsap.to(card, {
+            scale: 0.97,
+            rotate: -1,
+            duration: 0.15,
+            ease: "power2.out"
+          });
+        };
+
+        const handleUp = () => {
+          gsap.to(card, {
+            scale: 1,
+            rotate: 0,
+            duration: 0.3,
+            ease: "elastic.out(1, 0.4)"
+          });
+        };
+
+        card.addEventListener("pointerdown", handleDown);
+        card.addEventListener("pointerup", handleUp);
+        card.addEventListener("pointercancel", handleUp);
+
+        tapHandlers.push({ card, handleDown, handleUp });
+      });
+
+      // Cleanup function
+      return () => {
+        window.removeEventListener("resize", resizeHandler);
+        tapHandlers.forEach(({ card, handleDown, handleUp }) => {
+          card.removeEventListener("pointerdown", handleDown);
+          card.removeEventListener("pointerup", handleUp);
+          card.removeEventListener("pointercancel", handleUp);
+        });
+        processCards.forEach((el) => (el.style = ""));
+        cardContainer.style = "";
+        stickyHeader.style = "";
+        if (path) path.style = "";
+      };
     });
 
     mm.add("(min-width: 1000px)", () => {
