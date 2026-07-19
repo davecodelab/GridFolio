@@ -560,9 +560,13 @@
     transform: none;
   }
 
+  .process .card-front {
+    background-color: var(--base-300);
+  }
+
   .process .card-front img {
     object-fit: contain;
-    background-color: #141414;
+    background-color: var(--base-300);
   }
 
   .process #card-3 .card-front .desktop-only {
