@@ -4,22 +4,43 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Setup Contact Page Form
   const contactForm = document.getElementById("contact-form-element");
   if (contactForm) {
+    const emailInput = document.getElementById("contact-email");
+    if (emailInput) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const prefilledEmail = urlParams.get("email");
+      if (prefilledEmail) {
+        emailInput.value = prefilledEmail;
+      }
+    }
+
     const submitBtn = contactForm.querySelector("a.btn");
-    const submitText = submitBtn ? submitBtn.querySelector("span:not(.btn-line)") || submitBtn : null;
-    const originalText = submitText ? submitText.textContent.trim() : "LET'S START BUILDING";
+    const submitText = submitBtn
+      ? submitBtn.querySelector("span:not(.btn-line)") || submitBtn
+      : null;
+    const originalText = submitText
+      ? submitText.textContent.trim()
+      : "LET'S START BUILDING";
     const statusDiv = contactForm.querySelector(".form-status");
 
     if (submitBtn) {
       submitBtn.addEventListener("click", async (e) => {
         e.preventDefault();
-        
+
         // Form Validation
         const nameInput = document.getElementById("contact-name");
         const emailInput = document.getElementById("contact-email");
         const messageInput = document.getElementById("contact-message");
 
-        if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
-          showStatus(statusDiv, "Error: All fields are required for transmission.", true);
+        if (
+          !nameInput.value.trim() ||
+          !emailInput.value.trim() ||
+          !messageInput.value.trim()
+        ) {
+          showStatus(
+            statusDiv,
+            "Error: All fields are required for transmission.",
+            true,
+          );
           return;
         }
 
@@ -42,21 +63,33 @@ document.addEventListener("DOMContentLoaded", () => {
               name: nameInput.value.trim(),
               email: emailInput.value.trim(),
               message: messageInput.value.trim(),
-              type: "contact"
+              type: "contact",
             }),
           });
 
           const result = await response.json();
 
           if (response.ok && result.success) {
-            showStatus(statusDiv, "Signal Secured. Our crew will respond shortly.", false);
+            showStatus(
+              statusDiv,
+              "Signal Secured. Our crew will respond shortly.",
+              false,
+            );
             contactForm.reset();
           } else {
-            showStatus(statusDiv, result.error || "Transmission Interrupted. Please try again.", true);
+            showStatus(
+              statusDiv,
+              result.error || "Transmission Interrupted. Please try again.",
+              true,
+            );
           }
         } catch (err) {
           console.error("Submission error:", err);
-          showStatus(statusDiv, "Connection Timeout. Verify link and try again.", true);
+          showStatus(
+            statusDiv,
+            "Connection Timeout. Verify link and try again.",
+            true,
+          );
         } finally {
           setFormDisabled(contactForm, false);
           if (submitText) submitText.textContent = originalText;
@@ -69,8 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerForms = document.querySelectorAll(".footer-form");
   footerForms.forEach((form) => {
     const submitBtn = form.querySelector("a.btn");
-    const submitText = submitBtn ? submitBtn.querySelector("span:not(.btn-line)") || submitBtn : null;
-    const originalText = submitText ? submitText.textContent.trim() : "TRANSMIT MESSAGE";
+    const submitText = submitBtn
+      ? submitBtn.querySelector("span:not(.btn-line)") || submitBtn
+      : null;
+    const originalText = submitText
+      ? submitText.textContent.trim()
+      : "TRANSMIT MESSAGE";
     const statusDiv = form.querySelector(".form-status");
     const emailInput = form.querySelector(".footer-email-input");
 
@@ -88,37 +125,9 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
-        // Set Loading State
-        setFormDisabled(form, true);
-        if (submitText) submitText.textContent = "SENDING...";
-
-        try {
-          const response = await fetch("/api/send-email", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              email: emailInput.value.trim(),
-              type: "footer"
-            }),
-          });
-
-          const result = await response.json();
-
-          if (response.ok && result.success) {
-            showStatus(statusDiv, "Transmission complete.", false);
-            form.reset();
-          } else {
-            showStatus(statusDiv, result.error || "Failed.", true);
-          }
-        } catch (err) {
-          console.error("Footer Submission error:", err);
-          showStatus(statusDiv, "Failed to connect.", true);
-        } finally {
-          setFormDisabled(form, false);
-          if (submitText) submitText.textContent = originalText;
-        }
+        // Capture email and redirect
+        const enteredEmail = emailInput.value.trim();
+        window.location.href = `/contact?email=${encodeURIComponent(enteredEmail)}`;
       });
     }
   });
@@ -158,7 +167,7 @@ function showStatus(element, message, isError) {
   if (!element) return;
 
   element.textContent = message;
-  
+
   if (isError) {
     element.style.borderColor = "var(--base-500)"; // #ee6436 (Orange-Red Theme Warning Color)
     element.style.color = "var(--base-500)";
@@ -186,21 +195,22 @@ function showStatus(element, message, isError) {
         duration: 0.4,
         ease: "power2.out",
         onComplete: () => {
-          gsap.timeline()
+          gsap
+            .timeline()
             .to(element, { x: -8, duration: 0.05, ease: "none" })
             .to(element, { x: 8, duration: 0.1, ease: "none" })
             .to(element, { x: -6, duration: 0.1, ease: "none" })
             .to(element, { x: 6, duration: 0.1, ease: "none" })
             .to(element, { x: 0, duration: 0.05, ease: "none" });
-        }
-      }
+        },
+      },
     );
   } else {
     // Premium Success Micro-animation: Smooth Rise and Fade In
     gsap.fromTo(
       element,
       { opacity: 0, y: 15 },
-      { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" }
+      { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" },
     );
   }
 }
