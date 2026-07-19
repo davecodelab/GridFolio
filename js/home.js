@@ -117,6 +117,41 @@ function initProcessCardAnimation() {
       processCards.forEach((el) => (el.style = ""));
       cardContainer.style = "";
       stickyHeader.style = "";
+
+      // Reset the card backs to be properly rotated for 3D flip (overriding mobile CSS transform:none)
+      processCards.forEach((card) => {
+        gsap.set(card.querySelector(".card-back"), {
+          rotationY: 180,
+          transformOrigin: "center center",
+        });
+        gsap.set(card, {
+          transformPerspective: 1000,
+          transformStyle: "preserve-3d",
+        });
+      });
+
+      // Mobile scroll animation for cards
+      processCards.forEach((card, index) => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            end: "center 45%",
+            scrub: 1.5,
+          },
+        });
+
+        tl.fromTo(
+          card,
+          { opacity: 0.3, y: 80, rotationY: 0 },
+          { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+        ).to(
+          card,
+          { rotationY: 180, duration: 2, ease: "power2.inOut" },
+          "-=0.5",
+        );
+      });
+
       return {};
     });
 
@@ -137,7 +172,7 @@ function initProcessCardAnimation() {
               0.25,
               0,
               1,
-              progress
+              progress,
             );
             const yValue = gsap.utils.mapRange(0, 1, 40, 0, headerProgress);
             const opacityValue = gsap.utils.mapRange(
@@ -145,7 +180,7 @@ function initProcessCardAnimation() {
               1,
               0,
               1,
-              headerProgress
+              headerProgress,
             );
 
             gsap.set(stickyHeader, {
@@ -170,7 +205,7 @@ function initProcessCardAnimation() {
               0.25,
               75,
               60,
-              progress
+              progress,
             );
             gsap.set(cardContainer, { width: `${widthPercentage}%` });
           } else {
