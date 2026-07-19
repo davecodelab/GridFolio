@@ -558,7 +558,6 @@
 
   .process #card-3 {
     transform: none;
-    aspect-ratio: 16/9;
   }
 
   .process #card-3 .card-front .desktop-only {
@@ -569,21 +568,8 @@
   .process #card-3 .card-front .mobile-only {
     opacity: 1;
     pointer-events: auto;
-  }
-
-  .process #card-3 .card-back {
-    transform: none;
-    padding: 1.25rem;
-  }
-
-  .process #card-3 .card-back span {
-    top: 1.25rem;
-    left: 1.25rem;
-  }
-
-  .process #card-3 .card-back .card-stage {
-    bottom: 1.25rem;
-    right: 1.25rem;
+    object-fit: contain;
+    background-color: #141414;
   }
 }
 
