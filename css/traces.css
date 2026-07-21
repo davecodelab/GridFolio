@@ -350,6 +350,31 @@
   text-transform: uppercase;
 }
 
+.traces-container .traces-preview .traces-preview-name h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.traces-container .traces-preview .traces-preview-name h3 a:hover {
+  color: var(--base-500);
+}
+
+.traces-container .traces-preview .traces-preview-name .project-visit-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--base-200);
+  font-family: "Geist Mono", monospace;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.traces-container .traces-preview .traces-preview-name .project-visit-link:hover {
+  color: var(--base-100);
+}
+
 .traces-container .traces-preview .traces-preview-img {
   width: 100%;
   aspect-ratio: 1;

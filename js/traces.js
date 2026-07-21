@@ -3,54 +3,34 @@ import gsap from "gsap";
 // TODO: Replace TRACES_DATA with live backend data from the projects API endpoint
 const TRACES_DATA = [
   {
-    name: "Haven",
-    img: "/traces/trace_img_1.png",
-    tag: "Serene Balance",
+    name: "Serene Balance",
+    img: "/index/highlight_img_01.png",
+    tag: "Website",
+    url: "https://serene-balance.vercel.app/",
   },
   {
-    name: "Longstrider",
-    img: "/traces/trace_img_2.png",
-    tag: "SafeHaven",
+    name: "Hue Of Humanity",
+    img: "/index/highlight_img_02.jpg",
+    tag: "Brand Design",
+    url: "https://www.behance.net/gallery/229312307/Hue-Of-Humanity-Logo-Design",
   },
   {
-    name: "BloomForge Ventures",
-    img: "/traces/trace_img_3.jpeg",
-    tag: "Eco Habitat",
+    name: "CraftHive",
+    img: "/index/highlight_img_03.jpg",
+    tag: "Creative Website",
+    url: "https://www.crafthivegh.com",
   },
   {
-    name: "Suncross",
-    img: "/traces/trace_img_4.png",
-    tag: "Commerce Hub",
+    name: "Safari Roast",
+    img: "/index/highlight_img_04.jpg",
+    tag: "Website",
+    url: "https://safari-roast.com",
   },
   {
-    name: "Red Bluffs",
-    img: "/traces/trace_img_5.jpg",
-    tag: "Highland District",
-  },
-  {
-    name: "Moonshore",
-    img: "/traces/trace_img_6.jpeg",
-    tag: "Polar Settlement",
-  },
-  {
-    name: "Solspire",
-    img: "/traces/trace_img_04.jpg",
-    tag: "Solar Tower",
-  },
-  {
-    name: "Frostline Basin",
-    img: "/traces/trace_img_04.jpg",
-    tag: "Glacial Plains",
-  },
-  {
-    name: "Emberhold",
-    img: "/traces/trace_img_1.png",
-    tag: "Volcanic Outpost",
-  },
-  {
-    name: "The Gate",
-    img: "/traces/trace_img_6.jpeg",
-    tag: "Ancient Structure",
+    name: "Unique Capital Savings",
+    img: "/index/highlight_img_05.jpg",
+    tag: "Website",
+    url: "https://www.uniquecapitalsavings.com",
   },
 ];
 
@@ -74,6 +54,8 @@ function initTracesSlider() {
   const traceName = document.querySelector(".trace-name p");
   const tracePreview = document.querySelector(".traces-preview");
   const tracePreviewName = document.querySelector(".traces-preview-name h3");
+  const projectTitleLink = document.querySelector("#project-title-link");
+  const projectVisitLink = document.querySelector("#project-visit-link");
   const tracePreviewImg = document.querySelector(".traces-preview-img img");
   const tracePreviewTag = document.querySelector(".traces-preview-tag p");
   const controllerInner = document.querySelector(".controller-inner");
@@ -172,7 +154,18 @@ function initTracesSlider() {
       ((currentProductIndex % TRACES_DATA.length) + TRACES_DATA.length) %
       TRACES_DATA.length;
     const currentProduct = TRACES_DATA[actualIndex];
-    tracePreviewName.textContent = currentProduct.name;
+    
+    if (projectTitleLink) {
+      projectTitleLink.textContent = currentProduct.name;
+      projectTitleLink.href = currentProduct.url || "#";
+    } else {
+      tracePreviewName.textContent = currentProduct.name;
+    }
+    
+    if (projectVisitLink) {
+      projectVisitLink.href = currentProduct.url || "#";
+    }
+    
     tracePreviewImg.src = currentProduct.img;
     tracePreviewImg.alt = currentProduct.name;
     tracePreviewTag.textContent = currentProduct.tag;
