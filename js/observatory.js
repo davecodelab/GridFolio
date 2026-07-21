@@ -85,22 +85,17 @@ function initTeamCards() {
   }
 
   function updateTeamCounter(progress) {
-    const startProgress = 0.15;
-    const endProgress = 0.9;
-    const range = endProgress - startProgress;
-    const positions = Array.from({ length: totalSteps }, (_, index) => -index * 150);
+    const cardSpacing = 0.15;
+    const initialOffset = -cardSpacing * (totalCards - 1);
+    const totalTravel = 1 - initialOffset;
 
-    let index;
-    if (progress < startProgress) {
-      index = 0;
-    } else if (progress > endProgress) {
-      index = totalSteps - 1;
-    } else {
-      const normalizedProgress = (progress - startProgress) / range;
-      index = Math.min(totalSteps - 1, Math.floor(normalizedProgress * totalSteps));
-    }
+    // Calculate which card index (0 to totalCards - 1) is currently closest to the center of the arc
+    const activeCardIndex = Math.min(
+      totalCards - 1,
+      Math.max(0, Math.round((progress * totalTravel - 0.5) / cardSpacing))
+    );
 
-    const targetY = positions[index];
+    const targetY = -activeCardIndex * 150;
 
     gsap.to(countContainer, {
       y: targetY,

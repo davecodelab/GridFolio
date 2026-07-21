@@ -362,12 +362,12 @@
 .team .cards .card {
   position: absolute;
   width: 360px;
-  height: 485px;
+  height: 560px;
   left: 50%;
   top: 50%;
   transform-origin: center center;
   margin-left: -180px;
-  margin-top: -212.5px;
+  margin-top: -280px;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -511,13 +511,13 @@
 
   .team .cards .card {
     width: 280px;
-    height: 370px;
+    height: 440px;
     margin-left: -140px;
-    margin-top: -185px;
+    margin-top: -220px;
   }
 
   .team .cards .card .card-img {
-    max-height: 280px;
+    max-height: 350px;
     overflow: hidden;
   }
 
