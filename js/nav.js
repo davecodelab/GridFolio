@@ -1,3 +1,5 @@
+import "./analytics.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   initNavToggle();
   initNavLinks();
