@@ -32,6 +32,24 @@ const TRACES_DATA = [
     tag: "Website",
     url: "https://www.uniquecapitalsavings.com",
   },
+  {
+    name: "Bloomforge Skincare",
+    img: "/index/highlight_img_06.jpg",
+    tag: "Branding",
+    url: "https://www.behance.net/gallery/240054711/Bloomforge-Skincare",
+  },
+  {
+    name: "Kezia's Beauty Hub",
+    img: "/index/highlight_img_07.png",
+    tag: "Beauty Ecommerce",
+    url: "https://keziabeautyhub.com",
+  },
+  {
+    name: "London's Imports",
+    img: "/index/highlight_img_08.jpg",
+    tag: "Ecommerce Website",
+    url: "https://londonsimports.com",
+  },
 ];
 
 const SPACING = 0.4;
