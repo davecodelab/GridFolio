@@ -46,7 +46,7 @@ function initTeamCards() {
   const countContainer = document.querySelector(".count-container");
   if (!stickySection || !cards.length || !countContainer) return;
 
-  const stickyHeight = window.innerHeight * 7;
+  const stickyHeight = window.innerHeight * 4.5;
   const totalCards = cards.length;
   const totalSteps = Math.max(1, Math.min(totalCards, countContainer.children.length));
 
@@ -58,13 +58,13 @@ function initTeamCards() {
 
   const arcAngle = Math.PI * 0.4;
   const startAngle = Math.PI / 2 - arcAngle / 2;
+  const cardSpacing = 0.15;
+  const startArcProgress = -0.85;
+  const totalTravel = 1.6;
 
   function positionCards(progress = 0) {
     const radius = getRadius();
-    const cardSpacing = 0.15;
-    const initialOffset = -cardSpacing * (totalCards - 1);
-    const totalTravel = 1 - initialOffset;
-    const arcProgress = initialOffset + progress * totalTravel;
+    const arcProgress = startArcProgress + progress * totalTravel;
 
     cards.forEach((card, i) => {
       const cardOffset = (totalCards - 1 - i) * cardSpacing;
@@ -85,14 +85,12 @@ function initTeamCards() {
   }
 
   function updateTeamCounter(progress) {
-    const cardSpacing = 0.15;
-    const initialOffset = -cardSpacing * (totalCards - 1);
-    const totalTravel = 1 - initialOffset;
+    const arcProgress = startArcProgress + progress * totalTravel;
 
-    // Calculate which card index (0 to totalCards - 1) is currently closest to the center of the arc
+    // Calculate which card index (0 to totalCards - 1) is currently closest to the center of the arc (0.5)
     const activeCardIndex = Math.min(
       totalCards - 1,
-      Math.max(0, Math.round((progress * totalTravel - 0.5) / cardSpacing))
+      Math.max(0, Math.round(totalCards - 1 - (0.5 - arcProgress) / cardSpacing))
     );
 
     const targetY = -activeCardIndex * 150;

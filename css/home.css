@@ -501,8 +501,12 @@
   color: #000000;
 }
 
+.process #card-3 .card-back p {
+  color: #000000;
+}
+
 .process #card-3 .card-back span {
-  color: var(--base-500);
+  color: #000000;
   opacity: 0.8;
 }
 
