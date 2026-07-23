@@ -26,6 +26,12 @@ const TRACES_DATA = [
     tag: "Website",
     url: "https://safari-roast.com",
   },
+  {
+    name: "Unique Capital Savings",
+    img: "/index/highlight_img_05.jpg",
+    tag: "Website",
+    url: "https://www.uniquecapitalsavings.com",
+  },
 ];
 
 const SPACING = 0.4;
