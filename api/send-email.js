@@ -32,10 +32,12 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "Server configuration error: Missing Receiver Email" });
     }
 
+    const fromAddress = process.env.RESEND_FROM_EMAIL || "Rare Devs Studio <notifications@mail.raredevs.tech>";
+
     // Prepare email payload
     const emailBody = type === "footer"
       ? {
-          from: "Rare Devs Footer <onboarding@resend.dev>",
+          from: fromAddress,
           to: toEmail,
           subject: "New Signal Transmission (Footer Form)",
           html: `
@@ -47,7 +49,7 @@ export default async function handler(req, res) {
           `,
         }
       : {
-          from: "Rare Devs Contact <onboarding@resend.dev>",
+          from: fromAddress,
           to: toEmail,
           subject: `New Transmission from ${name}`,
           html: `
