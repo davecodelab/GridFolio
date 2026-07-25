@@ -268,12 +268,7 @@
 }
 
 .intro .container .intro-copy .intro-copy-wrapper h3 {
-  color: var(--base-300);
-}
-
-.intro .container .intro-copy .intro-copy-wrapper h3 .char {
-  display: inline-block;
-  will-change: color;
+  color: var(--base-100);
 }
 
 /* index - featured missions header section */
