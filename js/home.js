@@ -6,7 +6,6 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 document.addEventListener("DOMContentLoaded", () => {
   initHeroTimer();
-  initIntroCopyAnimation();
 });
 
 // hero section - updates timezone display every minute
@@ -32,36 +31,6 @@ function initHeroTimer() {
 
   updateTime();
   setInterval(updateTime, 60000);
-}
-
-// intro section - text fill animation on scroll
-function initIntroCopyAnimation() {
-  const introCopyH3 = document.querySelector(".intro-copy h3");
-  if (!introCopyH3) return;
-
-  const split = SplitText.create(introCopyH3, {
-    type: "words, chars",
-    charsClass: "char",
-  });
-
-  ScrollTrigger.create({
-    trigger: ".intro-copy",
-    start: "top 75%",
-    end: "bottom 30%",
-    onUpdate: (self) => {
-      const progress = self.progress;
-      const totalChars = split.chars.length;
-      const charsToColor = Math.floor(progress * totalChars);
-
-      split.chars.forEach((char, index) => {
-        if (index < charsToColor) {
-          char.style.color = "var(--base-100)";
-        } else {
-          char.style.color = "var(--base-300)";
-        }
-      });
-    },
-  });
 }
 
 // process card section - animates cards on scroll
